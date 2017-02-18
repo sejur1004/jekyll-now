@@ -6,6 +6,7 @@ comments: true
 external-url:
 categories: App_Tech
 ---
+
 ## History.
 > GlustetFS는 클라우드 스토리지를 위한 오픈 소스 플랫폼을 제공하는 소프트회사인 Gluster Inc.의 설립자이자 CTO 인 Anand Babu Periasamy에 의해 개발 되었으며, 2011년 10월 7일 Red Hat에서 인수되었다.
 
@@ -21,6 +22,20 @@ categories: App_Tech
 즉, 사용중인 Volume에 신규 Node를 추가하면 Online 상태에서 용량이 증가된다.
 
 ![GlusterFS Scale Out]({{ site.url }}/assets/GlusterFS_arch.png){:height="400px" width="600px"}
+
+## Concepts Summary
+
+![Concepts Summary]({{ site.url }}/assets/concepts.png){:height="400px" width="600px"}
+
+{% highlight ruby %}
+def show
+  @widget = Widget(params[:id])
+  respond_to do |format|
+    format.html # show.html.erb
+    format.json { render json: @widget }
+  end
+end
+{% endhighlight %}
 
 ### 
 Sleeping Beauty undergoes an experiment where she's put to sleep on Sunday. Immediately after that, a fair coin is tossed. If it comes out Heads, Sleeping Beauty is waken on Monday. If it comes out Tails, she's waken both on Monday and Tuesday. After being waken, the experimentalist asks Sleeping Beauty: *"What is your degree of certainty that the coin landed heads?"*. He subsequently puts Sleeping Beauty to sleep, taking care to administer her an amnesia inducing drug that ensures she doesn't remember the experiment. Hence, everytime Sleeping Beauty is awaked, she won't know which day it is or whether she has already been awakened before or not. What should her answer be?
