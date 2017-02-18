@@ -7,11 +7,18 @@ external-url:
 categories: App_Tech
 ---
 ## History.
-> GlustetFS는 클라우드 스토리지를 위한 오픈 소스 플랫폼을 제공하는 소프트회사인 Gluster Inc.의 설립자이자 CTO 인 Anand BabuPeriasamy에 의해 개발 되었으며, 2011년 10월 7일 Red Hat에서 인수되었다.
-이후 Redhat이 GlusterFS 오픈 소스 프로젝트의 주 개발및 관리를 하게 되었으며, Red Hat Storage Server로 사용버전을 산배하기 시작하였다. 그 이후 Redhat에서 Ceph를 인수하고 2015년에 Red HAt Gluster Storage라는 이름으로 상용제품을 판매중이다.
+> GlustetFS는 클라우드 스토리지를 위한 오픈 소스 플랫폼을 제공하는 소프트회사인 Gluster Inc.의 설립자이자 CTO 인 Anand Babu Periasamy에 의해 개발 되었으며, 2011년 10월 7일 Red Hat에서 인수되었다.
+이후 Redhat이 GlusterFS 오픈 소스 프로젝트의 주 개발및 관리를 하게 되었으며, Red Hat Storage Server로 사용버전을 판매하기 시작하였다. 그 이후 Redhat에서 Ceph를 인수하고 2015년에 Red HAt Gluster Storage라는 이름으로 판매중이다.
 
 ## Architecture
->  
+> SDS(Software Defined Storage)로 Commodity Hardware를 사용하여 Destrebuted Storage를 제공한다.
+GlusterFS Arch의 가장 큰 특징은 단일 파일의 저장 위치의 Metadata를 저장하는 별도의 서버가 없다는 특징이 있다.
+GlusterFS외 SDS기반의 분산 스토리지 경우, 파일 스토리지 제공 시, 최소 파일 위치에 대한 인덱싱 정보만 제공해주는 Metadata 서버가 존해나, GlusterFS는 "Elastic hash algorithm"으로 Metadata 서버를 대체 한다.
+
+그외 특징은 타 SDS 기반의 분산 파일 스토리지와 유사한 형태로, Scale Out을 통한 무한 확장성을 제공한다.
+즉, 사용중인 Volume에 신규 Node를 추가하면 Online 상태에서 용량이 증가된다.
+
+### 
 Sleeping Beauty undergoes an experiment where she's put to sleep on Sunday. Immediately after that, a fair coin is tossed. If it comes out Heads, Sleeping Beauty is waken on Monday. If it comes out Tails, she's waken both on Monday and Tuesday. After being waken, the experimentalist asks Sleeping Beauty: *"What is your degree of certainty that the coin landed heads?"*. He subsequently puts Sleeping Beauty to sleep, taking care to administer her an amnesia inducing drug that ensures she doesn't remember the experiment. Hence, everytime Sleeping Beauty is awaked, she won't know which day it is or whether she has already been awakened before or not. What should her answer be?
 
 It's amazing how a simple puzzle installs chaos among mathematicians and philosophers alike. Some would argue that the correct probability is ½: after all, the coin is **fair**, isn't it? Others would say that the correct probability should be ⅓. Think about this problem for a second because the correct answer is... **both**!
